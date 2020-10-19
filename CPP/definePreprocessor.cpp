@@ -2,10 +2,10 @@
 using namespace std;
 
 #define LENGTH 10
-#define WIDTH 5
 #define NEWLINE '\n'
 
 int main(){
+    const int  WIDTH  = 5;
     int area;
 
     area = LENGTH * WIDTH;

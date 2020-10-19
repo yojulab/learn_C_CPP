@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+   // for loop execution
+   for (int a = 10; a < 20; a = a + 1)
+   {
+      cout << "value of a: " << a << endl;
+      if (a > 16){   // with break statement
+         // terminate the loop
+         break;
+      }
+   }
+
+   return 0;
+}
