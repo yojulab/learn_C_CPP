@@ -4,5 +4,4 @@
 !sqlite/**
 **/*.out
 .vscode/*.json
-*
 **/*.dSYM
