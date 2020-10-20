@@ -1,7 +1,9 @@
 **/*.*~
+**/*.out
+**/*.dSYM
+
+!.gitignore
+!.vscode*/**
 !**/*.c
 !**/*.cpp
 !sqlite/**
-**/*.out
-.vscode/*.json
-**/*.dSYM
