@@ -34,6 +34,8 @@ int main() {
     };
     StructInt str_variable;
     StructInt *ptr_variable;
+    cout << "StructInt struct - " << ", variable size : " << sizeof(StructInt) << endl ;
+    // StructInt struct - , variable size : 16
     cout << "variable struct - address size : " << sizeof(&str_variable) << ", variable size : " << sizeof(str_variable) << endl ;
     // pointer int - address size : 8, variable size : 4
     cout << "pointer struct - address size : " << sizeof(&ptr_variable) << ", variable size : " << sizeof(*ptr_variable) << endl ;
