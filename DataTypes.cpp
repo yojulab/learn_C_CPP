@@ -2,12 +2,14 @@
 using namespace std;
 
 int main(){
-    cout << "Size of char : " << sizeof(char) << endl;
+    // cout << "Size of void : " << sizeof(void) << "\t";
+    cout << "Size of char : " << sizeof(char) << "\t";
     cout << "Size of int : " << sizeof(int) << endl;
-    cout << "Size of short int : " << sizeof(short int) << endl;
+    cout << "Size of short int : " << sizeof(short int) << "\t";
     cout << "Size of long int : " << sizeof(long int) << endl;
-    cout << "Size of float : " << sizeof(float) << endl;
+    cout << "Size of float : " << sizeof(float) << "\t";
     cout << "Size of double : " << sizeof(double) << endl;
+    cout << "Size of long double : " << sizeof(long double) << "\t";
     cout << "Size of wchar_t : " << sizeof(wchar_t) << endl;
 
     return 0;
