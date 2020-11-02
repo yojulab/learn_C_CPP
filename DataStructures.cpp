@@ -37,6 +37,7 @@ enum categories
    BUSINES,
 };
 
+void printBook( struct Book*);
 int main()
 {
    struct Book Book1; // Declare Book1 of type Book
@@ -63,6 +64,9 @@ int main()
    Book2.subject = "Telecom";
    Book2.book_id = 6495700;
 
+   printBook( &Book1 );
+   printBook( &Book2 );
+
    // Print Book2 info
    cout << "Book 2 title : " << Book2.title << endl;
    cout << "Book 2 author : " << Book2.author << endl;
@@ -72,7 +76,7 @@ int main()
    // Book 2 author : Yakit Singha
    // Book 2 subject : Telecom
    // Book 2 id : 6495700
- 
+
    struct Books BestSell; // Declare Books of type Book
    // book 1 specification
    BestSell.category = categories::COMPUTERS;
@@ -91,10 +95,20 @@ int main()
    BestSell.BookList[1].print_book();
    // title : Telecom Billing, author : Yakit Singha
  
+   BestSell.BookList[2] = Book1;
+   BestSell.BookList[4] = Book2;
    BestSell.print_booklist();
   // BookList - 
    // Learn C++ Programming
    // Telecom Billing
    
    return 0;
+}
+// This function accept pointer to structure as parameter.
+void printBook( struct Book *book ) {
+   cout << "printBook title : " << book->title <<endl;
+   cout << "printBook author : " << book->author <<endl;
+   cout << "printBook subject : " << book->subject <<endl;
+   cout << "printBook id : " << book->book_id <<endl;
+   book->subject = "Change subject in function";
 }
