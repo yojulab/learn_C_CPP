@@ -3,12 +3,12 @@ using namespace std;
  
 int main () {
    // Local variable declaration:
-   int a = 10;
+   int first = 10;
 
    // while loop execution
-   while( a < 20 ) {
-      cout << "value of a: " << a << endl;
-      a++;
+   while( first < 20 ) {
+      cout << "value of first: " << first << endl;
+      first++;
    }
  
    return 0;
