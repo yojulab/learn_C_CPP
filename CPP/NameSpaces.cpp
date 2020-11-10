@@ -19,11 +19,19 @@ namespace second_space {
 } // namespace second_space
 
 using namespace first_space;
+
+// #include "under/NameSpacesUsingOthers.cpp"
+#include "under/NameSpacesUsingOthers.h"
+using namespace third_space;
+
 int main() {
    // This calls function from first name space.
-   func();
+   // func();     // Error When add using namespace third_space
+   first_space::func();
    // Inside first_space
    second_space::func();
-   // Inside second_space
+
+   // Outside second_space
+   third_space::func();
    return 0;
 }
