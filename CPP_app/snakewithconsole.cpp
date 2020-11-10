@@ -1,9 +1,11 @@
 #include <iostream> // Standard Header
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/ioctl.h>
-#include <termios.h>
-#include <stdio.h>
+#include <conio.h>
+// #include <stdlib.h>
+// #include <unistd.h>
+// #include <sys/ioctl.h>
+// #include <termios.h>
+// #include <stdio.h>
+
 
 using namespace std;
 
@@ -87,26 +89,26 @@ int x, y;
 int movementx = snakemovementspeedx; /// Snake Movement
 int movementy = 0;                   /// Snake Movement
 
-int _kbhit()
-{
-    static const int STDIN = 0;
-    static bool initialized = false;
+// int _kbhit()
+// {
+//     static const int STDIN = 0;
+//     static bool initialized = false;
 
-    if (!initialized)
-    {
-        // Use termios to turn off line buffering
-        termios term;
-        tcgetattr(STDIN, &term);
-        term.c_lflag &= ~ICANON;
-        tcsetattr(STDIN, TCSANOW, &term);
-        setbuf(stdin, NULL);
-        initialized = true;
-    }
+//     if (!initialized)
+//     {
+//         // Use termios to turn off line buffering
+//         termios term;
+//         tcgetattr(STDIN, &term);
+//         term.c_lflag &= ~ICANON;
+//         tcsetattr(STDIN, TCSANOW, &term);
+//         setbuf(stdin, NULL);
+//         initialized = true;
+//     }
 
-    //int bytesWaiting;
-    ioctl(STDIN, FIONREAD, &bytesWaiting);
-    return bytesWaiting;
-}
+//     //int bytesWaiting;
+//     ioctl(STDIN, FIONREAD, &bytesWaiting);
+//     return bytesWaiting;
+// }
 
 /// Reaction On Press Button Of Keyboard
 void reaction_on_keyboard(const char k)
