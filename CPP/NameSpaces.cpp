@@ -21,8 +21,10 @@ namespace second_space {
 using namespace first_space;
 
 // #include "under/NameSpacesUsingOthers.cpp"
-#include "under/NameSpacesUsingOthers.h"
+#include "under/NameSpacesUsingOthers.h"   // C++ way
 using namespace third_space;
+
+#include "under/NameSpacesUsingOthersWithoutNamespace.h" // C way
 
 int main() {
    // This calls function from first name space.
@@ -30,8 +32,11 @@ int main() {
    first_space::func();
    // Inside first_space
    second_space::func();
-
+   
    // Outside second_space
    third_space::func();
+
+   // Outside without namespace
+   funcWithoutNamespace();
    return 0;
 }
