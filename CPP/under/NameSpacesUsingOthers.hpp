@@ -10,3 +10,5 @@ namespace third_space {
 namespace fourth_space {
    void func();
 }; // namespace fourth_space
+
+void funcOutside();
