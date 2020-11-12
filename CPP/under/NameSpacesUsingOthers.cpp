@@ -8,7 +8,7 @@ namespace third_space {
    {
       cout << "Inside third_space" << endl;
    }
-} // namespace third_space
+}; // namespace third_space
 
 // fourth name space
 namespace fourth_space {
@@ -16,4 +16,4 @@ namespace fourth_space {
    {
       cout << "Inside second_space" << endl;
    }
-} // namespace second_space
+}; // namespace second_space
