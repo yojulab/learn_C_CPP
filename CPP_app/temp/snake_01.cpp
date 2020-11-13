@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <termios.h>
-#include <stropts.h>
+// #include <stropts.h>
 #include <stdio.h>
 
 using namespace std;
@@ -365,9 +365,11 @@ void loop(void){
 
 
 /// Main Trigger Function
-main(){
+int main(){
 
     initialise_background(); /// Install All Variables
     initialise_snake();      /// Install Snake data
     loop();                 /// run Update Loop
+
+    return 0;
 }
