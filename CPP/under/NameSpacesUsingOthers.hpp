@@ -1,5 +1,6 @@
-
+#pragma once
 #include "NameSpacesUsingOthers.cpp"
+#include "NameSpacesUsingOthersWithoutNamespace.hpp"
 
 // third name space
 namespace third_space {

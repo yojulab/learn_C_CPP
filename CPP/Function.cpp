@@ -7,6 +7,8 @@ int funcInsde(); // function declaration
 #include "under/NameSpacesUsingOthers.hpp"
 using namespace third_space;
 
+#include "under/NameSpacesUsingOthersWithoutNamespace.hpp"
+
 int main()
 { // function call
    int i = funcInsde();
