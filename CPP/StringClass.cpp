@@ -7,7 +7,7 @@ int main()
 {
 
     string str1 = "Hello";
-    string str2 = "World";
+    char str2[20] = "World";
     string str3;
     int len;
 
@@ -25,6 +25,10 @@ int main()
     len = str3.size();
     cout << "str3.size() :  " << len << endl;
     // str3.size() :  10
+
+    // str2 = str2 + " : " + to_string(len);        // Error
+    str3 = str3 + " : " + to_string(len);
+    cout << "string str3 + to_string() :  " << str3 << endl;
 
     return 0;
 }
