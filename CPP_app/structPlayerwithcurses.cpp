@@ -9,15 +9,28 @@
 
 int is_move_okay(int y, int x);
 
+struct Player
+{
+	int x=20, y=20;
+	void appear(int &x, int &y)
+	{
+		mvaddstr(y, x, 	"@@@@");
+		mvaddstr(++y, x,"||||");
+		mvaddstr(++y, x,"@@@@");
+	}
+};
+
 int main(void)
 {
 	int y, x;
 	int ch;
-
+	struct Player player;
+	
 	/* initialize curses */
 
 	initscr();
 	keypad(stdscr, TRUE);
+	curs_set(0);
 	cbreak();
 	noecho();
 
@@ -34,10 +47,11 @@ int main(void)
 	{
 		/* by default, you get a blinking cursor - use it to indicate player */
 
-		mvaddch(y, x, PLAYER);
+		// mvaddch(y, x, PLAYER);
 		// move(y, x);
 		// refresh();
 
+		player.appear(y, x);
 		ch = getch();
 
 		/* test inputted key and determine direction */
@@ -49,8 +63,8 @@ int main(void)
 		case 'W':
 			// if ((y > 0) && is_move_okay(y - 1, x))
 			// {
-				mvaddch(y, x, EMPTY);
-				y = y - 1;
+			// mvaddch(y, x, EMPTY);
+			y = y - 1;
 			// }
 			break;
 		case KEY_DOWN:
@@ -58,8 +72,8 @@ int main(void)
 		case 'S':
 			// if ((y < LINES - 1) && is_move_okay(y + 1, x))
 			// {
-				mvaddch(y, x, EMPTY);
-				y = y + 1;
+			// mvaddch(y, x, EMPTY);
+			y = y + 1;
 			// }
 			break;
 		case KEY_LEFT:
@@ -67,8 +81,8 @@ int main(void)
 		case 'A':
 			// if ((x > 0) && is_move_okay(y, x - 1))
 			// {
-				mvaddch(y, x, EMPTY);
-				x = x - 1;
+			// mvaddch(y, x, EMPTY);
+			x = x - 1;
 			// }
 			break;
 		case KEY_RIGHT:
@@ -76,8 +90,8 @@ int main(void)
 		case 'D':
 			// if ((x < COLS - 1) && is_move_okay(y, x + 1))
 			// {
-				mvaddch(y, x, EMPTY);
-				x = x + 1;
+			// mvaddch(y, x, EMPTY);
+			x = x + 1;
 			// }
 			break;
 		}
