@@ -18,6 +18,12 @@ struct Player
 		mvaddstr(++y, x,"||||");
 		mvaddstr(++y, x,"@@@@");
 	}
+	void appearwithmvprintw(int &x, int &y)
+	{
+		mvprintw(y, x, 	"@@@@");
+		mvprintw(++y, x,"||||");
+		mvprintw(++y, x,"@@@@");
+	}
 };
 
 int main(void)
@@ -51,7 +57,9 @@ int main(void)
 		// move(y, x);
 		// refresh();
 
-		player.appear(y, x);
+		// player.appear(y, x);
+		
+		player.appearwithmvprintw(y, x);
 		ch = getch();
 
 		/* test inputted key and determine direction */
