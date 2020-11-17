@@ -2,16 +2,18 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file for Linux",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: g++-10 build active file",
+            "command": "/usr/local/bin/g++-10",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-l",
+                "curses",
             ],
             "options": {
-                "cwd": "/usr/bin"
+                "cwd": "/usr/local/bin"
             },
             "problemMatcher": [
                 "$gcc"
@@ -20,30 +22,8 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Generated task by Debugger "
-		},
-		{
-			"type": "cppbuild",
-			"label": "C/C++: clang++ build active file for Mac",
-			"command": "/usr/bin/clang++",
-			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}/${fileBasenameNoExtension}"
-			],
-			"options": {
-				"cwd": "/usr/bin"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"detail": "compiler: /usr/bin/clang++"
-		}
+            "detail": "Generated task by Debugger"
+        }
     ],
     "version": "2.0.0"
 }
