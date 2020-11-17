@@ -1,10 +1,15 @@
 #include <curses.h>
 int main()
 {
-    initscr();
-    /* main body */
+	WINDOW *w;
+	w = initscr();
+	curs_set(0);
+
+    /* start main body */
     printw("Hello Ncurse!");
-    refresh();
+    // refresh();
+    /* end main body */
+
     getch();
     endwin();
     // exit(0);

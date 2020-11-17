@@ -1,10 +1,15 @@
 #include <curses.h>
-// #include <string>
+#include <string>
 int main()
 {
-    initscr();
+    using namespace std;
+    WINDOW *w;
+    w = initscr();
+    curs_set(0);
+
     int max_y, max_x;
-    getmaxyx(stdscr, max_y, max_x);
+    max_y = LINES - 1;
+    max_x = COLS - COLS; //
 
     /* main body */
     //Set default init mode
@@ -16,13 +21,14 @@ int main()
     move(3, 4);
     addch('3');
     mvaddch(5, 4, '5');
-    mvaddstr(6, 4, "6,4 - &");
+    string str_var = "max_y, max_x : " + to_string(int(LINES)) + ", " + to_string(int(COLS));
+    mvaddstr(6, 4, str_var.c_str());
 
     // attron(COLOR_PAIR(COLOR_RED));
     mvprintw(max_y / 2, max_x / 2, "Middle Hello Ncurse!");
     mvprintw(max_y - 1, 0, "End Hello Ncurse!");
 
-    mvaddch(max_y-1, max_x-1, 'E');
+    mvaddch(max_y - 1, max_x - 1, 'E');
     // draw outline
     // for (int row = 0; row < LINES - 1; ++row)
     // {
@@ -32,7 +38,7 @@ int main()
     //     }
     // }
 
-    refresh();
+    // refresh();
     getch();
     endwin();
     // exit(0);

@@ -6,20 +6,23 @@
 
 int main(void)
 {
-	int y, x;
-	int ch = 'y';
-
 	/* initialize curses */
-	initscr();
+	WINDOW *w;
+	w = initscr();
 	keypad(stdscr, TRUE);
 	curs_set(0);
 	// cbreak();
 	// noecho();
 	// clear();
+	timeout(30); // control game speed
 
 	/* start player at lower-left */
+	int y, x;
+	int ch = 'y'; // define integer type with charactor
+
 	y = LINES - 1;
 	x = COLS - COLS; //
+	int move_x = 0, move_y = 0;
 	while ((ch != 'q') && (ch != 'Q'))
 	{
 		/* by default, you get a blinking cursor - use it to indicate player */
@@ -28,11 +31,11 @@ int main(void)
 		// mvaddch(5, 4, '5');
 		// mvaddstr(6, 4, "6,4 - &");
 
-		mvaddch(y, x - 1, ERASE_TRACE); // delete moving right trace
+		mvaddch(++move_y, ++move_x, OPPONENT); // auto moving
 		mvaddch(y, x, PLAYER);
 		mvaddch(10, 5, WALL);
 		mvaddch(11, 5, OPPONENT);
-		refresh();
+		// refresh();
 
 		ch = getch();
 		/* test inputted key and determine direction */
@@ -40,35 +43,20 @@ int main(void)
 		{
 		case KEY_UP:
 		case 'w':
-			// if ((y > 0) && is_move_okay(y - 1, x))
-			// {
-			// mvaddch(y, x, EMPTY);
 			y = y - 1;
-			// }
 			break;
 		case KEY_DOWN:
 		case 's':
-			// if ((y < LINES - 1) && is_move_okay(y + 1, x))
-			// {
-			// mvaddch(y, x, EMPTY);
 			y = y + 1;
-			// }
 			break;
 		case KEY_LEFT:
 		case 'a':
-			// if ((x > 0) && is_move_okay(y, x - 1))
-			// {
-			// mvaddch(y, x, EMPTY);
 			x = x - 1;
-			// }
 			break;
 		case KEY_RIGHT:
 		case 'd':
-			// if ((x < COLS - 1) && is_move_okay(y, x + 1))
-			// {
-			// mvaddch(y, x, EMPTY);
+			mvaddch(y, x, ERASE_TRACE); // delete moving right trace
 			x = x + 1;
-			// }
 			break;
 		}
 	};
