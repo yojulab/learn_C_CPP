@@ -13,7 +13,7 @@ int is_move_okay(int y, int x)
 	/* return true if the space is okay to move into */
 	campare_ch = mvinch(y, x); // 주어진 위치 문자 return
 	// mvprintw(10, 30, campare_ch);
-	return ((campare_ch == WALL) || (campare_ch == OPPONENT));
+	return ((campare_ch == 'W'));
 	// return 1;
 }
 
