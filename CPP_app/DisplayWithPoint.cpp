@@ -9,7 +9,7 @@ int main()
 
     int max_y, max_x;
     max_y = LINES - 1;
-    max_x = COLS - COLS; //
+    max_x = COLS - 1; //
 
     /* main body */
     //Set default init mode
