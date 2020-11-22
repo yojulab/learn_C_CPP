@@ -2,6 +2,16 @@
 
 using namespace std;
 
+// ~$ ./BasicInputOutput 1>./cout.log 2>./cerr.log
+// sang
+// ...
+// ~$ cat cout.log
+// Please enter your name and age : Your name is: sanghun, age is: 49
+// Please enter your name and age : Your name is: hun, age is: 21
+// ~$ cat cerr.log
+// cerr Error message : Unable to read....
+// clog Error message : Unable to read....
+
 int main()
 {
     char name[50], age[5];
@@ -15,6 +25,6 @@ int main()
     cout << "Your name is: " << str_name << ", age is: " << str_age << endl;
 
     char str[] = "Unable to read....";
-    cerr << "Error message : " << str << endl;
-    clog << "Error message : " << str << endl;
+    cerr << "cerr Error message : " << str << endl;
+    clog << "clog Error message : " << str << endl;
 }
