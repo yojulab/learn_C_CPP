@@ -13,6 +13,7 @@ int main( )
   int fd;
   int wd;
   char buffer[EVENT_BUF_LEN];
+  string watchdir = "/home/freesky";
 
   /*creating the INOTIFY instance*/
   fd = inotify_init();
@@ -23,7 +24,7 @@ int main( )
   }
 
   /*adding the “/tmp” directory into watch list. Here, the suggestion is to validate the existence of the directory before adding into monitoring list.*/
-  wd = inotify_add_watch( fd, "/home/freesky", IN_CREATE | IN_DELETE );
+  wd = inotify_add_watch( fd, watchdir, IN_CREATE | IN_DELETE );
 
   /*read to determine the event change happens on “/tmp” directory. Actually this read blocks until the change event occurs*/ 
 
