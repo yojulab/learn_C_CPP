@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     cout << "Receiving Keyboard Presses!" << endl;
 
     //open the file for reading
-    ifstream file("/dev/input/event1");
+    ifstream file("/dev/input/event0");
 
     //temp storage for event
     char data[sizeof(event)];
@@ -33,25 +33,26 @@ int main(int argc, char *argv[])
             //now copy the data to the struct
             memcpy(&event, data, sizeof(event));
 
+            cout << "Key Press " << event.code << endl;
             //now lets read the event
             //event type
-            if (event.type == EV_KEY)
-            {
+            // if (event.type == EV_KEY)
+            // {
 
-                //its a keyboard event
-                //was it the esc key?
-                if (event.code == KEY_ESC)
-                {
+            //its a keyboard event
+            //was it the esc key?
+            // switch (event.code)
+            // {
+            // case KEY_ESC:
+            //     cout << "The Escape Key Was Pushed!" << endl;
+            //     session = false;
+            //     break;
 
-                    cout << "The Escape Key Was Pushed!" << endl;
-                    session = false;
-                }
-                else
-                {
-
-                    cout << "Key Press " << event.code << endl;
-                }
-            }
+            // default:
+            //     cout << "Key Press " << event.code << endl;
+            //     break;
+            // }
+            // }
         }
 
         //dont forget to close the file

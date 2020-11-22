@@ -2,18 +2,18 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++-10 build active file",
-            "command": "/usr/local/bin/g++-10",
+            "label": "C/C++: for linux g++ build active file",
+            "command": "/usr/bin/g++",
             "args": [
                 "-g",
                 "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
                 "-l",
                 "curses",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "options": {
-                "cwd": "/usr/local/bin"
+                "cwd": "/usr/bin"
             },
             "problemMatcher": [
                 "$gcc"
