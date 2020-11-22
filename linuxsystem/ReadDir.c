@@ -2,6 +2,12 @@
 #include <dirent.h>
 #include <stdlib.h>
 
+// ~$ ReadDir /home/sanghun/Document
+// .
+// ..
+// temp
+// .DS_Store
+// .localized
 int main(int argc, char *argv[])
 {
     DIR *dir;
