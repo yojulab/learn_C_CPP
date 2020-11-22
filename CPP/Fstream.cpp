@@ -2,50 +2,43 @@
 #include <iostream>
 using namespace std;
 
+//  ./Fstream
+// You can write data to want you ! I want to write the files.
+// This is a line.
+// This is another line.
+// I
 int main()
 {
-    // char data[100];
-    string data;
-
+    string filename = "Fstream.txt";
     // open a file in write mode.
-    string filename = "afile.dat";
-    fstream outfile;
-    outfile.open(filename, ios::ate);
+    ofstream outfstream(filename);
+    string data;
+    if (outfstream.is_open())
+    {
+        outfstream << "This is a line." << endl;
+        outfstream << "This is another line.\n";
+        cout << "You can write data to want you !";
+        cin >> data;
+        outfstream << data << endl;
 
-    cout << "Writing to the file" << endl;
-    cout << "Enter your name: ";
-    cin >> data;
-    // cin.getline(data, 100);
+        outfstream.close();
+        exit(1);
+    }
+    else
+        cout << "Unable to open file";
 
-    // write inputted data into the file.
-    outfile << data << endl;
+    ifstream infstream(filename);
+    if (infstream.is_open())
+    {
 
-    cout << "Enter your age: ";
-    cin >> data;
-    // cin.ignore();
-
-    // again write inputted data into the file.
-    outfile << data << endl;
-
-    // close the opened file.
-    outfile.close();
-
-    // open a file in read mode.
-    fstream infile;
-    infile.open(filename, ios::ate);
-
-    cout << "Reading from the file" << endl;
-    infile >> data;
-
-    // write the data at the screen.
-    cout << data << endl;
-
-    // again read the data from the file and display it.
-    infile >> data;
-    cout << data << endl;
-
-    // close the opened file.
-    infile.close();
-
+        while (getline(infstream, data))
+        {
+            cout << data << '\n';
+        }
+        infstream.close();
+    }
+    else
+        cout << "Unable to open file";
+    
     return 0;
 }
