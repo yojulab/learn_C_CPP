@@ -1,0 +1,1 @@
+ADD_EXECUTABLE(main_exe main.c memo.c calendar.c)
