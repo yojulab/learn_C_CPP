@@ -8,26 +8,36 @@ double division(int a, int b)
     int result = 0;
     try
     {
-        int result = a / b;
+        if (b == 0)
+        {
+            throw "Division by zero condition!";
+            // Floating point exception: 8      // Error When comment
+        }
+        result = a / b;
     }
-    catch (std::exception exp)
+    catch (const char *msg) // exception of type const char*
+    {
+        cout << "Exception caught Floating : " << msg << endl;
+        return -1;
+    }
+    catch (std::exception msg)
     {
         cout << "Exception caught in division()" << endl;
-        cout << exp.what() << endl;
+        cout << msg.what() << endl;
+        return -1;
     }
     return result;
 }
 
 int main()
 {
-    int x = 50;
-    int y = 0;
-    double z = 0;
+    int first = 50;
+    int second = 0;
 
     try
     {
-        z = division(x, y);
-        cout << z << endl;
+        double third = division(first, second);
+        cout << "Exception caught in try : " << third << endl;
     }
     catch (std::exception msg)
     {

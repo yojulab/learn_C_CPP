@@ -5,7 +5,7 @@
 **/*.o
 
 !.gitignore
-!.vscode*/**
+.vscode/**
 !**/*.c
 !**/*.cpp
 !sqlite/**
